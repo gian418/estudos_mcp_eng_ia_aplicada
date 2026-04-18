@@ -12,13 +12,13 @@ export function agentNode(openRouterService: OpenRouterService) {
                 fileName: state.fileName!,
                 fileContent: state.fileContent!
             })
-
             const result = await openRouterService.generateStructured(
                 getSystemPrompt(),
-                userMessage
+                userMessage,
             )
 
             return {
+                error: undefined,
                 messages: [new AIMessage(result.data as string)]
             };
 
