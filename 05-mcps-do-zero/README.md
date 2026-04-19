@@ -102,7 +102,9 @@ The MCP Inspector lets you explore and test all tools, resources, and prompts in
 npm run mcp:inspect
 ```
 
-This opens the inspector at `http://localhost:5173` and connects it to the running server.
+This opens the inspector on a local loopback URL and connects it to the running server.
+
+If you previously used the inspector on `127.0.0.1:6274`, the script now moves the UI to `127.0.0.1:6275` and the proxy to `6278` so the browser starts with a fresh origin and does not reuse stale auth state.
 
 ---
 
